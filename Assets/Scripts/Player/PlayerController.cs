@@ -1,57 +1,74 @@
 ﻿
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float movementSpeed;
-    public float JumpForce;
+    public float movementSpeed = 10;
+
+    public Vector2 direction;
 
     private Rigidbody2D rb;
 
-    private bool facingRight;
+    private bool facingRight = true;
+
+    public Transform feet;
+    public Vector3 velocity;
+    public float gravityMultiplier;
 
     private void Start()
     {
-        facingRight = true;
-
-        rb = GetComponent<Rigidbody2D>();
+        
     }
 
     private void Update()
     {
-       
+        bool grounded = Physics2D.Raycast(feet.transform.position, Vector3.down, 0.1f);
+
+        direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")); //Gets the horizontal and vertical axis
+
+        if (!grounded)
+        
+            velocity += Physics.gravity * gravityMultiplier * Time.deltaTime;
+        
+
+
+
+        else if (velocity.y < 0)
+        
+            velocity = Vector3.zero;
+
+            transform.position += velocity * Time.deltaTime;
+        
+        
+        
+            
+
 
     }
 
-    private void FixedUpdate()
-    {
-        var movement = Input.GetAxis("Horizontal");
-        transform.position += new Vector3(movement, 0, 0) * Time.deltaTime * movementSpeed; //Changes the position of character on the horizontal axis
+    void moveCharacter(float horizontal)
+    { 
 
-        if (Input.GetButtonDown("Jump") && Mathf.Abs(rb.velocity.y) < 0.001f)
+        if((horizontal > 0 && !facingRight) || (horizontal < 0 && facingRight)) //If input is in opposite direction, object will be flipped
         {
-            rb.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse); //Changes ther position of the character on the vertical axis
+            Flip();
         }
-
-        float horizontal = Input.GetAxis("Horizontal");
-
-
-        Flip(horizontal);
     }
 
-    private void Flip(float horizontal)
+    void FixedUpdate() //Use for physics
     {
-        if(horizontal > 0 && !facingRight || horizontal < 0 && facingRight)
-        {
-            facingRight = !facingRight;
-
-            Vector3 theScale = transform.localScale;
-
-            theScale.x *= -1;
-
-            transform.localScale = theScale;
-        }
+        moveCharacter(direction.x); 
     }
+    
+    void Flip()
+    {
+        facingRight = !facingRight;
+        transform.rotation = Quaternion.Euler(0, facingRight ? 0 : 180 , 0) ; //Flips the object to face left or right
+    }
+    
+
+  
 
 
 
