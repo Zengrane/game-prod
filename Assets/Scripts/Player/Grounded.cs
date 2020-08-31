@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Grounded : MonoBehaviour
 {
-    GameObject Player;
+ 
     private Animator anim;
     // Start is called before the first frame update
     void Start()
     {
-        Player = gameObject.transform.parent.gameObject;
+      
         anim = GetComponent<Animator>();
     }
 
@@ -25,7 +25,9 @@ public class Grounded : MonoBehaviour
         {   
             //if(transform.position.y > collision.contacts[0].point.y) // TODO???
             {
-                Player.GetComponent<PlayerController>().isGrounded = true; //Changes the isGrounded bool in the player controller script to true if collided with the ground
+              GetComponent<PlayerController>().isGrounded = true; //Changes the isGrounded bool in the player controller script to true if collided with the ground
+
+                
             }
            
         }
@@ -35,8 +37,7 @@ public class Grounded : MonoBehaviour
     {
         if (collision.collider.tag == "Ground")
         {
-            Player.GetComponent<PlayerController>().isGrounded = false;
-             //Changes the isGrounded bool in the player controller script to false if not collided with the ground
+            GetComponent<PlayerController>().isGrounded = false; //Changes the isGrounded bool in the player controller script to false if not collided with the ground
         }
     }
 }
