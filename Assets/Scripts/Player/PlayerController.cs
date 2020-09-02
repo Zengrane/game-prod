@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     private bool facingRight = true;
     public bool isGrounded = false;
 
+    public PrimaryProjectile projectile;
+
     private Rigidbody2D rb;
     private Animator anim;
 
@@ -25,11 +27,19 @@ public class PlayerController : MonoBehaviour
         Jump();
         Shoot(); 
 
+        
+
+
+
+    }
+
+    void FixedUpdate() //Use for physics
+    {
         Vector2 velocity = rb.velocity;
         anim.SetBool("isRunning", false);
         anim.SetBool("isJumping", false);
         anim.SetBool("isShooting", false);
-        
+
         if (Input.GetKey("a"))
         {
             rb.velocity = new Vector2(-movementSpeed, rb.velocity.y);
@@ -38,6 +48,7 @@ public class PlayerController : MonoBehaviour
             {
                 anim.SetBool("isRunning", true);
             }
+
 
         }
 
@@ -48,12 +59,10 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKey("d") && isGrounded)
             {
                 anim.SetBool("isRunning", true);
+
             }
 
-            else if(Input.GetKey("d") && (Input.GetKeyDown("space")))
-            {
-                anim.SetBool("isShooting", true);
-            }
+
         }
 
         if (velocity.x < 0) //If the move input is less than zero, the player changes their direction to the left
@@ -67,30 +76,18 @@ public class PlayerController : MonoBehaviour
             transform.eulerAngles = new Vector3(0, 0, 0);
         }
 
-        if (velocity.y > 0)
-        {
-            anim.SetBool("isRunning", false);
-        }
-
+     
         if (!isGrounded)
         {
             anim.SetBool("isJumping", true);
-            
+
         }
 
 
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKey("space"))
         {
             anim.SetBool("isShooting", true);
         }
-
-
-
-    }
-
-    void FixedUpdate() //Use for physics
-    {
-        
 
     }   
 
