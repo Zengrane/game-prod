@@ -25,12 +25,7 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         Jump();
-        Shoot(); 
-
-        
-
-
-
+ 
     }
 
     void FixedUpdate() //Use for physics
@@ -65,18 +60,8 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        if (velocity.x < 0) //If the move input is less than zero, the player changes their direction to the left
-        {
-            transform.eulerAngles = new Vector3(0, 180, 0);
+   
 
-        }
-
-        else if (velocity.x > 0)  //If the move input is more than zero, the player changes their direction to the right
-        {
-            transform.eulerAngles = new Vector3(0, 0, 0);
-        }
-
-     
         if (!isGrounded)
         {
             anim.SetBool("isJumping", true);
@@ -87,6 +72,18 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey("space"))
         {
             anim.SetBool("isShooting", true);
+        }
+
+        if (velocity.x < 0) //If the move input is less than zero, the player changes their direction to the left
+        {
+            transform.eulerAngles = new Vector3(0, 180, 0);
+
+        }
+
+        else if (velocity.x > 0)  //If the move input is more than zero, the player changes their direction to the right
+        {
+            transform.eulerAngles = new Vector3(0, 0, 0);
+
         }
 
     }   
@@ -101,10 +98,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void Shoot()
-    {
-        
-    }
+ 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.tag == "Ground")

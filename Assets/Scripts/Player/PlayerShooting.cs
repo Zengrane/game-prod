@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerShooting : MonoBehaviour
 {
-    public GameObject projectile;
+    public PrimaryProjectile projectile;
     public Transform shotPoint;
 
     private float timeShots;
@@ -23,7 +23,7 @@ public class PlayerShooting : MonoBehaviour
         {
             if (Input.GetKeyDown("space"))
             {
-                Instantiate(projectile, shotPoint.position, transform.rotation);
+                Instantiate(projectile.projectile, shotPoint.position, transform.rotation);
                 timeShots = startTimeShots;
             }
         }

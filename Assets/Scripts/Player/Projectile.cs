@@ -22,7 +22,6 @@ public class Projectile : MonoBehaviour
     void Update()
     {
         rb.velocity = transform.right * speed;
-     
-
+    
     }
 }
