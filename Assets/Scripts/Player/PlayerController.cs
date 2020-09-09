@@ -37,7 +37,9 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKey("a"))
         {
+          
             rb.velocity = new Vector2(-movementSpeed, rb.velocity.y);
+            transform.eulerAngles = new Vector3(0, 180, 0);
 
             if (Input.GetKey("a") && isGrounded)
             {
@@ -49,7 +51,10 @@ public class PlayerController : MonoBehaviour
 
         else if (Input.GetKey("d"))
         {
+            
             rb.velocity = new Vector2(movementSpeed, rb.velocity.y);
+            transform.eulerAngles = new Vector3(0, 0, 0);
+
 
             if (Input.GetKey("d") && isGrounded)
             {
@@ -59,6 +64,12 @@ public class PlayerController : MonoBehaviour
 
 
         }
+
+        else
+        {
+            rb.velocity = new Vector2(0, rb.velocity.y);
+        }
+    
 
    
 
@@ -74,17 +85,6 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("isShooting", true);
         }
 
-        if (velocity.x < 0) //If the move input is less than zero, the player changes their direction to the left
-        {
-            transform.eulerAngles = new Vector3(0, 180, 0);
-
-        }
-
-        else if (velocity.x > 0)  //If the move input is more than zero, the player changes their direction to the right
-        {
-            transform.eulerAngles = new Vector3(0, 0, 0);
-
-        }
 
     }   
 

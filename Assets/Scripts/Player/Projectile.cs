@@ -6,14 +6,15 @@ public class Projectile : MonoBehaviour
 {
     public float speed;
 
-    public Rigidbody2D rb;
+    private Rigidbody2D rb;
 
     private Animation anim;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animation>();
         
 
     }
@@ -22,6 +23,7 @@ public class Projectile : MonoBehaviour
     void Update()
     {
         rb.velocity = transform.right * speed;
-    
+        anim.Play();
+
     }
 }
