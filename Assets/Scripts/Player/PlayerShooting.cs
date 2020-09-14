@@ -24,7 +24,7 @@ public class PlayerShooting : MonoBehaviour
     {   
         if (timeShots <= 0)
         {
-            if (Input.GetKeyDown("space"))
+            if (Input.GetKey("space"))
             {   
                 GameObject go = Instantiate(projectile.projectile, shotPoint.position, transform.rotation);
 
