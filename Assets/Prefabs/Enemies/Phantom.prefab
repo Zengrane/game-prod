@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  stoppingDistance: 3
+  stoppingDistance: 1
   lineOfSite: 7.68
 --- !u!61 &1693474617211749294
 BoxCollider2D:

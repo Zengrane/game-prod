@@ -53,12 +53,12 @@ public class PlayerController : MonoBehaviour
         {
             
             rb.velocity = new Vector2(movementSpeed, rb.velocity.y);
-            transform.eulerAngles = new Vector3(0, 0, 0);
+            transform.eulerAngles = new Vector3(0, 0, 0); //Changes transform of player rotation. Transform euler angles represents the roational values.
 
 
             if (Input.GetKey("d") && isGrounded)
             {
-                anim.SetBool("isRunning", true);
+                anim.SetBool("isRunning", true); //Sets the running animation to true.
 
             }
 
@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
 
         else
         {
-            rb.velocity = new Vector2(0, rb.velocity.y);
+            rb.velocity = new Vector2(0, rb.velocity.y); //If either keys arent pressed x movement is 0
         }
     
 
@@ -75,14 +75,14 @@ public class PlayerController : MonoBehaviour
 
         if (!isGrounded)
         {
-            anim.SetBool("isJumping", true);
+            anim.SetBool("isJumping", true); //Jumping animation is true if the player isnt grounded
 
         }
 
 
         if (Input.GetKey("space"))
         {
-            anim.SetBool("isShooting", true);
+            anim.SetBool("isShooting", true); //Shooting animation is true when space is pressed
         }
 
 
