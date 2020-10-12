@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D rb;
     private Animator anim;
+    public ParticleSystem runPart;
 
     private void Start()
     {
@@ -37,7 +38,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKey("a"))
         {
-          
+
             rb.velocity = new Vector2(-movementSpeed, rb.velocity.y);
             transform.eulerAngles = new Vector3(0, 180, 0);
 
@@ -51,7 +52,7 @@ public class PlayerController : MonoBehaviour
 
         else if (Input.GetKey("d"))
         {
-            
+
             rb.velocity = new Vector2(movementSpeed, rb.velocity.y);
             transform.eulerAngles = new Vector3(0, 0, 0); //Changes transform of player rotation. Transform euler angles represents the roational values.
 
@@ -69,9 +70,9 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = new Vector2(0, rb.velocity.y); //If either keys arent pressed x movement is 0
         }
-    
 
-   
+
+
 
         if (!isGrounded)
         {
@@ -79,11 +80,11 @@ public class PlayerController : MonoBehaviour
 
         }
 
-
-        if (Input.GetKey("space"))
+        if (Input.GetKey("e"))
         {
             anim.SetBool("isShooting", true); //Shooting animation is true when space is pressed
         }
+       
 
 
     }   

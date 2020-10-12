@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 5503926379717477710}
   m_Layer: 0
   m_Name: FireballAnim_0
-  m_TagString: Untagged
+  m_TagString: PlayerProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,7 +98,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf6f8c033d57f604ab795511b383302d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 2
+  enemyProjectile: {fileID: 8795966952116731124, guid: a6550b8275b14d546a47d413e84c6037,
+    type: 3}
+  explosion: {fileID: 2185492579765654499, guid: e937c83336186f542b12399a531640e3,
+    type: 3}
 --- !u!50 &-3659479645772142780
 Rigidbody2D:
   serializedVersion: 4

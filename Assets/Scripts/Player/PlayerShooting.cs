@@ -11,12 +11,14 @@ public class PlayerShooting : MonoBehaviour
     private float timeShots;
     public float startTimeShots;
 
+    private Animator anim;
+
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        anim = GetComponent<Animator>(); //Gets the animator component
     }
 
     // Update is called once per frame
@@ -24,17 +26,22 @@ public class PlayerShooting : MonoBehaviour
     {   
         if (timeShots <= 0)
         {
-            if (Input.GetKey("space"))
-            {   
+            if (Input.GetKey("e"))
+            {
+                
+
                 GameObject go = Instantiate(projectile.projectile, shotPoint.position, transform.rotation);
 
                 Projectile proj = go.GetComponent<Projectile>();
 
                 proj.speed = projectile.speed;
+               
+                timeShots = startTimeShots;
 
 
-               timeShots = startTimeShots;
             }
+
+            
         }
         else
         {
