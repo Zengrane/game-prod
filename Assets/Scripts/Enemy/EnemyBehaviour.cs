@@ -6,13 +6,11 @@ public class EnemyBehaviour : MonoBehaviour
 {
     public float hitpoints;
     public float maxHitPoints = 5;
-    public HealthbarBehaviour healthbar;
 
     // Start is called before the first frame update
     void Start()
     {
         hitpoints = maxHitPoints;
-        healthbar.SetHealth(hitpoints, maxHitPoints);
     }
 
     public void TakeHit(float damage)

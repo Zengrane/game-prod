@@ -11,32 +11,21 @@ public class CameraFollow : MonoBehaviour
     public float leftLimit = 600f;
     public float rightLimit = 2400f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float smoothSpeed = 0.125f;
 
-    // called every frame
-    private void Update()
-    {
-        
-    }
-
-    // called every fixed framerate
-    private void FixedUpdate()
-    {
-        
-    }
     // called after update and fixed update
     void LateUpdate()
     {
-        Vector3 temp = transform.position; //Store current camera's position in variable temp
+        Vector3 temp = transform.position;
 
-        temp.x = Mathf.Clamp(playerTransform.position.x, leftLimit, rightLimit); //Set the camera's position x to be equal to the player's x position
+        temp.x = playerTransform.position.x; 
 
-        temp.x += offset; //Will add offset value to temporary x position
+        temp.x += offset;
 
-        transform.position = temp; //Set back the camera's position back to camera's current position
+        temp.x = Mathf.Clamp(playerTransform.position.x, leftLimit, rightLimit);
+
+        transform.position = temp;
+
+        
     }
 }

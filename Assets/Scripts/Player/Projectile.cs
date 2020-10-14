@@ -12,6 +12,8 @@ public class Projectile : MonoBehaviour
 
     public Transform enemyProjectile;
     public ParticleSystem explosion;
+    public ParticleSystem trail;
+   
     
 
     // Start is called before the first frame update
@@ -22,15 +24,22 @@ public class Projectile : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animation>();
 
-        
+        Instantiate(trail, transform.position, transform.rotation);
+
 
     }
+
+        
+    
 
     // Update is called once per frame
     void Update()
     {
         rb.velocity = transform.right * speed;
         anim.Play();
+
+        
+        
 
     }
 

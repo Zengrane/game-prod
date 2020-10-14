@@ -19,8 +19,8 @@ TagManager:
   - Foreground
   - 
   - Surface
-  - 
-  - 
+  - PlayerProjectile
+  - EnemyProjectile
   - 
   - 
   - 

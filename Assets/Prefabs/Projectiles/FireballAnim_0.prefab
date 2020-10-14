@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -1522178555985684141}
   - component: {fileID: 2389726884406622713}
   - component: {fileID: 5503926379717477710}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: FireballAnim_0
   m_TagString: PlayerProjectile
   m_Icon: {fileID: 0}
@@ -103,6 +103,7 @@ MonoBehaviour:
     type: 3}
   explosion: {fileID: 2185492579765654499, guid: e937c83336186f542b12399a531640e3,
     type: 3}
+  trail: {fileID: 397879369361798542, guid: 59201aa00f34d5f4b87376418e321f9e, type: 3}
 --- !u!50 &-3659479645772142780
 Rigidbody2D:
   serializedVersion: 4
