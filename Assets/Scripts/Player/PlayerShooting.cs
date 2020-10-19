@@ -26,7 +26,7 @@ public class PlayerShooting : MonoBehaviour
     {   
         if (timeShots <= 0)
         {
-            if (Input.GetKey("e"))
+            if (Input.GetKey(KeyCode.LeftShift))
             {
                 
 

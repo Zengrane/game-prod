@@ -12,6 +12,7 @@ public class PlayerFollow : MonoBehaviour
     public GameObject enemyProj;
     public GameObject enemyProjParent;
     public float lineOfSite;
+    public SpriteRenderer spriteRend;
 
     private Rigidbody2D rb2d;
 
@@ -27,6 +28,7 @@ public class PlayerFollow : MonoBehaviour
     }
 
     // Update is called once per frame
+
     void Update()
     {
 
@@ -37,15 +39,15 @@ public class PlayerFollow : MonoBehaviour
             if (transform.position.x < target.position.x) //If the enemy position is less than x, the enemy moves right
             {
                 rb2d.velocity = new Vector2(speed, 0);
-                transform.localScale = new Vector2(1.5f, 1.5f);
-
+                spriteRend.flipX = false;
+                enemyProjParent.transform.localPosition = new Vector2(0.389f, enemyProjParent.transform.localPosition.y);
             }
 
             else if (transform.position.x > target.position.x) //If the enemy position is greater than x, the enemy moves right
             {
                 rb2d.velocity = new Vector2(-speed, 0);
-                transform.localScale = new Vector2(-1.5f, 1.5f);
-
+                spriteRend.flipX = true;
+                enemyProjParent.transform.localPosition = new Vector2(-0.389f, enemyProjParent.transform.localPosition.y);
             }
 
 
@@ -53,15 +55,20 @@ public class PlayerFollow : MonoBehaviour
 
         if (distanceFromPLayer <= shootingRange && nextFireTime < Time.time)
         {
-            GameObject proj = Instantiate(enemyProj, enemyProjParent.transform.position, Quaternion.identity);
-
-       
-            proj.transform.up = target.position - transform.position;
+            Shoot(target.position); 
 
             nextFireTime = Time.time + fireRate;
         }
 
 
+    }
+
+    public virtual void Shoot(Vector3 target)
+    {
+        GameObject proj = Instantiate(enemyProj, enemyProjParent.transform.position, Quaternion.identity);
+
+
+        proj.transform.up = target - transform.position;
     }
 
 

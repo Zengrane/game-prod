@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyBehaviour : MonoBehaviour
 {
     public float hitpoints;
     public float maxHitPoints = 5;
+    public Image healthBarFill;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +23,8 @@ public class EnemyBehaviour : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        healthBarFill.fillAmount = hitpoints / maxHitPoints;
 
 
     }

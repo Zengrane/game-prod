@@ -176,7 +176,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: -5214169738061236271, guid: 70a18d55f25d1274694993a786739bc5,
     type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.2971698, b: 0.2971698, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -386,12 +386,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1693474617211749292}
-  - component: {fileID: 6348977484478811880}
+  - component: {fileID: 3353273759243151700}
   - component: {fileID: 1693474617211749294}
   - component: {fileID: 563926540}
   - component: {fileID: 563926541}
   m_Layer: 0
-  m_Name: Phantom
+  m_Name: Mage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -414,7 +414,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6348977484478811880
+--- !u!114 &3353273759243151700
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -423,18 +423,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 1693474617211749282}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16032638b83477441b0c1436a251c97d, type: 3}
+  m_Script: {fileID: 11500000, guid: 033e45e3787ca344bb56ceb96f1b8a51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
   stoppingDistance: 3
-  shootingRange: 8.5
-  fireRate: 2
+  shootingRange: 6.5
+  fireRate: 4
   enemyProj: {fileID: 8576252714078299855, guid: a6550b8275b14d546a47d413e84c6037,
     type: 3}
   enemyProjParent: {fileID: 1343750382}
-  lineOfSite: 8.92
+  lineOfSite: 7
   spriteRend: {fileID: 1414305595}
+  burstCount: 3
+  timeBetweenShots: 0.5
 --- !u!61 &1693474617211749294
 BoxCollider2D:
   m_ObjectHideFlags: 0

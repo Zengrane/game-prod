@@ -80,7 +80,7 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        if (Input.GetKey("e"))
+        if (Input.GetKey(KeyCode.LeftShift))
         {
             anim.SetBool("isShooting", true); //Shooting animation is true when space is pressed
         }

@@ -12,7 +12,7 @@ public class Projectile : MonoBehaviour
 
     public Transform enemyProjectile;
     public ParticleSystem explosion;
-    public ParticleSystem trail;
+
    
     
 
@@ -23,8 +23,6 @@ public class Projectile : MonoBehaviour
 
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animation>();
-
-        Instantiate(trail, transform.position, transform.rotation);
 
 
     }
