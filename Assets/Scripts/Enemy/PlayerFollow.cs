@@ -39,28 +39,37 @@ public class PlayerFollow : MonoBehaviour
             if (transform.position.x < target.position.x) //If the enemy position is less than x, the enemy moves right
             {
                 rb2d.velocity = new Vector2(speed, 0);
-                spriteRend.flipX = false;
+                spriteRend.flipX = true;
                 enemyProjParent.transform.localPosition = new Vector2(0.389f, enemyProjParent.transform.localPosition.y);
             }
 
             else if (transform.position.x > target.position.x) //If the enemy position is greater than x, the enemy moves right
             {
                 rb2d.velocity = new Vector2(-speed, 0);
-                spriteRend.flipX = true;
+                spriteRend.flipX = false;
                 enemyProjParent.transform.localPosition = new Vector2(-0.389f, enemyProjParent.transform.localPosition.y);
+
+           
             }
 
-
+       
         }
+
+      
 
         if (distanceFromPLayer <= shootingRange && nextFireTime < Time.time)
         {
             Shoot(target.position); 
 
             nextFireTime = Time.time + fireRate;
+
+            
         }
 
-
+        if (distanceFromPLayer < stoppingDistance)
+        {
+            rb2d.velocity = new Vector2(0, 0);
+        }
     }
 
     public virtual void Shoot(Vector3 target)
@@ -77,6 +86,11 @@ public class PlayerFollow : MonoBehaviour
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, lineOfSite);
+
+        Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, shootingRange);
+
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, stoppingDistance);
     }
 }

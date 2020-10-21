@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 926515976}
   - component: {fileID: 926515978}
   - component: {fileID: 926515977}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: BackGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,7 +83,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1343750383}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: ProjectileParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ GameObject:
   - component: {fileID: 1414305597}
   - component: {fileID: 1414305595}
   - component: {fileID: 1414305596}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: SpriteRend
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,13 +129,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1414305594}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1693474617211749292}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!212 &1414305595
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -216,7 +216,7 @@ GameObject:
   - component: {fileID: 1522251282}
   - component: {fileID: 1522251284}
   - component: {fileID: 1522251283}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -290,7 +290,7 @@ GameObject:
   - component: {fileID: 1919017772}
   - component: {fileID: 1919017771}
   - component: {fileID: 1919017770}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -390,7 +390,7 @@ GameObject:
   - component: {fileID: 1693474617211749294}
   - component: {fileID: 563926540}
   - component: {fileID: 563926541}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Phantom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -427,13 +427,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  stoppingDistance: 3
-  shootingRange: 8.5
+  stoppingDistance: 5
+  shootingRange: 10
   fireRate: 2
   enemyProj: {fileID: 8576252714078299855, guid: a6550b8275b14d546a47d413e84c6037,
     type: 3}
   enemyProjParent: {fileID: 1343750382}
-  lineOfSite: 8.92
+  lineOfSite: 10
   spriteRend: {fileID: 1414305595}
 --- !u!61 &1693474617211749294
 BoxCollider2D:
@@ -469,14 +469,14 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1693474617211749282}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 5
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -495,5 +495,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitpoints: 0
-  maxHitPoints: 5
+  maxHitPoints: 7
   healthBarFill: {fileID: 1522251283}

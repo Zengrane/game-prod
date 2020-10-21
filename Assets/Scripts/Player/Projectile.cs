@@ -13,8 +13,12 @@ public class Projectile : MonoBehaviour
     public Transform enemyProjectile;
     public ParticleSystem explosion;
 
-   
-    
+    public float lifeTime;
+
+    private void Awake()
+    {
+        Destroy(gameObject, lifeTime);
+    }
 
     // Start is called before the first frame update
     void Start()
