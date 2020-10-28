@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffb40337cd4becd458d522114a08e9c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3.5
+  speed: 4
   trail: {fileID: 0}
   projectile: {fileID: 3475870015307725643, guid: b5c30c48c0a6d7641916bc47ced5b37a,
     type: 3}

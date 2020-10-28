@@ -7,6 +7,8 @@ TagManager:
   - Ground
   - PlayerProjectile
   - EnemyProjectile
+  - Foreground
+  - Heart
   layers:
   - Default
   - TransparentFX

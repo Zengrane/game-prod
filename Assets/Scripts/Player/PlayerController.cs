@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
 
     private bool facingRight = true;
     public bool isGrounded = false;
+    public bool isForeground = false;
 
     public PrimaryProjectile projectile;
 

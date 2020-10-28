@@ -27,9 +27,9 @@ public class PhantomProjectile : MonoBehaviour
         bulletRB = GetComponent<Rigidbody2D>();
         target = GameObject.FindGameObjectWithTag("Player");
 
-        //Vector2 moveDir = (target.transform.position - transform.position).normalized * speed;
+        Vector2 moveDir = (target.transform.position - transform.position).normalized * speed;
         
-        //bulletRB.velocity = new Vector2(moveDir.x, moveDir.y);
+        bulletRB.velocity = new Vector2(moveDir.x, moveDir.y);
 
      
 
@@ -38,25 +38,10 @@ public class PhantomProjectile : MonoBehaviour
     private void Update()
     {
 
-        MoveTowards(target.transform.position);
-        RotateTowards(target.transform.position);
-        
 
     }
 
-    private void MoveTowards(Vector2 target)
-    {
-        transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
-    }
-
-    private void RotateTowards(Vector2 target)
-    {
-        var offset = 270f;
-        Vector2 direction = target - (Vector2)transform.position;
-        direction.Normalize();
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(Vector3.forward * (angle + offset));
-    }
+   
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
