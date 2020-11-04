@@ -41,6 +41,7 @@ public class LuciusProjectile : MonoBehaviour
         //bulletRB.velocity = new Vector2(moveDir.x, moveDir.y);
 
 
+        Invoke("DoInstantiate", 7.99f);
 
     }
 
@@ -70,7 +71,7 @@ public class LuciusProjectile : MonoBehaviour
 
         bulletRB.velocity = transform.up * speed;
 
-
+       
     }
 
 
@@ -82,7 +83,7 @@ public class LuciusProjectile : MonoBehaviour
 
         if (playerCollider)
         {
-            playerCollider.TakeHit(1); //If the collision is the phantom enemy, do one damage
+            playerCollider.TakeHit(0); //If the collision is the phantom enemy, do one damage
         }
 
 
@@ -92,8 +93,8 @@ public class LuciusProjectile : MonoBehaviour
 
     private void DoInstantiate()
     {
-        
-       
+        Instantiate(explosion, transform.position, transform.rotation);
+
     }
 
 

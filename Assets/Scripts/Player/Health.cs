@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor.IMGUI.Controls;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class Health : MonoBehaviour
 {
     public float hitpoints;
@@ -52,6 +53,7 @@ public class Health : MonoBehaviour
         if (health == 0)
         {
             Destroy(gameObject);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
         }
     }
 

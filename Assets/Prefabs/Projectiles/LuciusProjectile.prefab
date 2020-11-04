@@ -180,7 +180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  speed: 8
+  speed: 7
   turnSpeed: 95
   projectile: {fileID: 0}
   explosion: {fileID: 2185492579765654499, guid: 306024f3ad726bd44a2347258c3bffb0,
